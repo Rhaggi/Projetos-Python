@@ -4,14 +4,11 @@ import random
 novo_jogo = 's'
 
 def jogo():
-    try:
-        usuario = input('Digite o que deseja escolher para jogar: Pedra, papel ou tesoura?\n')
-    except ValueError:
-        print('Não consegui entender sua escolha, tente novamente!')
-
-    usuario = usuario.lower()
 
     computador = random.choice(['pedra', 'papel', 'tesoura'])
+
+    usuario = input('Digite o que deseja escolher para jogar: Pedra, papel ou tesoura?\n')
+    usuario = usuario.lower()
 
     if usuario == computador:
         print(f'Empate! Você jogou {usuario} e o computador também jogou {computador}')
@@ -26,6 +23,7 @@ def jogo():
 
 
 while novo_jogo == 's':
+    
     jogo()
 
     novo_jogo = input('Deseja jogar novamente? Digite "s" para sim e "n" para não.\n')
