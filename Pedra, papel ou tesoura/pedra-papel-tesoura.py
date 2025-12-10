@@ -7,8 +7,11 @@ def jogo():
 
     computador = random.choice(['pedra', 'papel', 'tesoura'])
 
-    usuario = input('Digite o que deseja escolher para jogar: Pedra, papel ou tesoura?\n')
+    usuario = input('Digite o que deseja escolher para jogar: pedra, papel ou tesoura?\n')
     usuario = usuario.lower()
+
+    if usuario not in ['pedra', 'papel', 'tesoura']:
+        raise ValueError('Entrada inválida')
 
     if usuario == computador:
         print(f'Empate! Você jogou {usuario} e o computador também jogou {computador}')
@@ -24,10 +27,14 @@ def jogo():
 
 while novo_jogo == 's':
     
-    jogo()
-
+    try:
+        jogo()
+    except ValueError as e:
+        print(f'Erro: {e}')
+        print('Por favor, escolha uma das opções: pedra, papel ou tesoura.\n')
+        continue
+    
     novo_jogo = input('Deseja jogar novamente? Digite "s" para sim e "n" para não.\n')
-    novo_jogo.lower
-    novo_jogo
+    novo_jogo = novo_jogo.lower()
 
-# Tarefa: adicionar tratamento de exceções
+print('Obrigada por jogar!')
