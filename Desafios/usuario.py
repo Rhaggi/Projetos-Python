@@ -7,6 +7,7 @@ novo_usuario = 's'
 nome = ''
 
 def usuario():
+    # Defini as variaveis como globais para que pudessem ser acessadas também fora da função.
     global nome, idade, empresa, cargo, hobbie
     nome = input(f'Olá, qual o seu nome?\n')
     idade = int(input(f'Bem vindo(a) {nome}, qual a sua idade?\n'))
